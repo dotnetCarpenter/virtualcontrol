@@ -8,15 +8,18 @@
   },
   "scripts": {
     "postinstall": "make --jobs=2",
+    "start": "ecstatic app --port 10420",
+    "poststart": "opn http://localhost:10420",
     "bower": "bower",
     "mkdirp": "mkdirp",
     "cp": "cp"
   },
   "devDependencies": {
-  },
-  "dependencies": {
     "bower": "^1.7.9",
     "cp": "^0.2.0",
-    "mkdirp": "^0.5.1"
-  }
+    "ecstatic": "^2.1.0",
+    "mkdirp": "^0.5.1",
+    "opn-cli": "^3.1.0"
+  },
+  "dependencies": {}
 }

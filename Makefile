@@ -1,5 +1,5 @@
 SVGJS = bower_components/svg.js/dist/svg.min.js
-MOVEDSVGJS = lib/svg.js/svg.min.js
+MOVEDSVGJS = app/lib/svg.js/svg.min.js
 
 all: $(MOVEDSVGJS)
 
@@ -8,5 +8,5 @@ $(SVGJS):
 
 
 $(MOVEDSVGJS): | $(SVGJS)
-	npm run mkdirp -- lib/svg.js
+	npm run mkdirp -- $(filter-out svg.min.js,$(MOVEDSVGJS))
 	npm run cp -- $(SVGJS) $(MOVEDSVGJS)
