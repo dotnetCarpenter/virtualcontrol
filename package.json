@@ -8,7 +8,7 @@
   },
   "scripts": {
     "postinstall": "make --jobs=2",
-    "start": "ecstatic app --port 10420",
+    "start": "ecstatic app --port 10420 &",
     "poststart": "opn http://localhost:10420",
     "bower": "bower",
     "mkdirp": "mkdirp",
