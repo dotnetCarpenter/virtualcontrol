@@ -1,3 +1,7 @@
 #canvas {
 	height: 100vh;
 }
+
+.window {
+  transition: all 1s ease-in-out;
+}
