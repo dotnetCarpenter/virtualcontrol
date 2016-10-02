@@ -1,13 +1,15 @@
 {
   "name": "virtualcontrol",
-  "description": "An attempt to recreate the look and feel from the Virtual Control see in Matrix Reloaded",
+  "description": "An attempt to recreate the look and feel from the Virtual Control as seen in Matrix Reloaded",
   "license": "Unlicense",
   "repository": {
     "type": "git",
     "url": "https://github.com/dotnetCarpenter/virtualcontrol.git"
   },
   "scripts": {
-    "postinstall": "make --jobs=2",
+    "prepublish": "npm run build:make && npm run build:rollup",
+    "build:make": "make --jobs=2",
+    "build:rollup": "rollup --watch --format iife --input src/js/app.js --output app/target/app.js &",
     "start": "ecstatic app --port 10420 &",
     "poststart": "opn http://localhost:10420",
     "bower": "bower",
@@ -19,7 +21,9 @@
     "cp": "^0.2.0",
     "ecstatic": "^2.1.0",
     "mkdirp": "^0.5.1",
-    "opn-cli": "^3.1.0"
+    "opn-cli": "^3.1.0",
+    "rollup": "^0.36.1",
+    "rollup-watch": "^2.5.0"
   },
   "dependencies": {}
 }

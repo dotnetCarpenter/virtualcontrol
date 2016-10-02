@@ -39,3 +39,4 @@ jspm_packages
 # Other stuff
 bower_components/
 lib/
+target/
