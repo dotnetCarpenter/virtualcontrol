@@ -3,5 +3,5 @@
 }
 
 .window {
-  transition: all 1s ease-in-out;
+  transition: stroke-dashoffset 1s ease-in-out;
 }
