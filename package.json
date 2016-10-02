@@ -9,7 +9,7 @@
   "scripts": {
     "prepublish": "npm run build:make && npm run build:rollup",
     "build:make": "make --jobs=2",
-    "build:rollup": "rollup --watch --format iife --input src/js/app.js --output app/target/app.js &",
+    "build:rollup": "rollup --watch --format iife --input src/js/app.js --output app/target/app.js --globals svg.js:SVG &",
     "start": "ecstatic app --port 10420 &",
     "poststart": "opn http://localhost:10420",
     "bower": "bower",

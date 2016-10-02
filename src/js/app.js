@@ -1,3 +1,7 @@
 "use strict"
 
-console.log("Hello World")
+import SVG from "svg.js"
+
+const canvas = SVG("canvas")
+
+console.log(SVG.supported)
