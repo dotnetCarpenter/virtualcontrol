@@ -1,0 +1,22 @@
+{
+  "name": "virtualcontrol",
+  "description": "An attempt to recreate the look and feel from the Virtual Control see in Matrix Reloaded",
+  "license": "Unlicense",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dotnetCarpenter/virtualcontrol.git"
+  },
+  "scripts": {
+    "postinstall": "make --jobs=2",
+    "bower": "bower",
+    "mkdirp": "mkdirp",
+    "cp": "cp"
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+    "bower": "^1.7.9",
+    "cp": "^0.2.0",
+    "mkdirp": "^0.5.1"
+  }
+}
