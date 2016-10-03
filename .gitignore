@@ -40,3 +40,5 @@ jspm_packages
 bower_components/
 lib/
 target/
+.vscode/
+t.js
