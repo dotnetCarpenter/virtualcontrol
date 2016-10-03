@@ -1,4 +1,4 @@
-SVGJS = bower_components/svg.js/dist/svg.min.js
+SVGJS = bower_components/svg.js bower_components/svg.draggable.js
 MOVED_SVGJS = app/lib/svg.js/svg.min.js
 MOVED_SVGJS_FOLDER = $(dir $(MOVED_SVGJS))
 TARGET = app/target
@@ -9,10 +9,10 @@ CSS_TARGET = app/target/main.css
 all: $(MOVED_SVGJS) $(TARGET) $(CSS_TARGET)
 
 clean:
-	-rm -r app/lib app/target bower_components
+	rm -r app/lib app/target bower_components
 
 $(SVGJS):
-	npm run bower -- install svg.js
+	npm run bower -- install $(notdir $@)
 
 $(MOVED_SVGJS): | $(SVGJS)
 	npm run mkdirp -- $(MOVED_SVGJS_FOLDER)

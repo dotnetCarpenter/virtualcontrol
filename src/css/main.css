@@ -2,6 +2,6 @@
 	height: 100vh;
 }
 
-.window {
+.tile {
   transition: stroke-dashoffset 1s ease-in-out;
 }
