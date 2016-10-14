@@ -1,4 +1,4 @@
-LIBRARIES := bower_components/svg.js/dist/svg.js bower_components/svg.draggable.js/dist/svg.draggable.js# bower_components/svg.topath.js
+LIBRARIES := bower_components/svg.js/dist/svg.js bower_components/svg.draggable.js/dist/svg.draggable.js bower_components/svg.topath.js
 LIBRARIES_TARGET_FOLDER = app/lib/
 LIBRARIES_TARGET := $(patsubst %,$(LIBRARIES_TARGET_FOLDER)%, $(notdir $(LIBRARIES)))
 TARGET = app/target
@@ -25,7 +25,7 @@ $(LIBRARIES_TARGET_FOLDER):
 	npm run mkdirp -- $(dir $@)
 
 $(LIBRARIES_TARGET): $(LIBRARIES) |$(LIBRARIES_TARGET_FOLDER)
-	npm run cp -- $(filter %$(@F),$^) $@
+	npm run cp -- -r $(filter %$(@F),$^) $@
 
 $(TARGET):
 	npm run mkdirp -- $@
