@@ -10,7 +10,8 @@
     "prepublish": "npm run build:make && npm run build:rollup",
     "build:make": "make --jobs=2",
     "build:rollup": "rollup --format iife --input src/js/app.js --output app/target/app.js --globals svg.js:SVG",
-    "start": "npm-run-all --parallel server watch open build:make 'build:rollup -- --watch'",
+    "prestart": "npm run build:make",
+    "start": "npm-run-all --parallel server watch open 'build:rollup -- --watch'",
     "watch": "nodemon --watch src/css --ext .css --exec npm run build:make",
     "server": "ecstatic app --port 10420",
     "open": "opn http://localhost:10420",
@@ -23,10 +24,10 @@
     "cp": "^0.2.0",
     "ecstatic": "^2.1.0",
     "mkdirp": "^0.5.1",
-    "nodemon": "^1.10.2",
+    "nodemon": "^1.11.0",
     "npm-run-all": "^3.1.0",
     "opn-cli": "^3.1.0",
-    "rollup": "^0.36.1",
+    "rollup": "^0.36.3",
     "rollup-watch": "^2.5.0"
   },
   "dependencies": {}
