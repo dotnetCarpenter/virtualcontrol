@@ -1,8 +1,8 @@
 {
   "name": "virtualcontrol",
   "dependencies": {
-    "svg.draggable.js": "~2.2.1",
-    "svg.topath.js": "*",
-    "svg.js": "~2.3.5"
+    "svg.draggable.js": "^2.2.1",
+    "svg.topath.js": "^1.0.0",
+    "svg.js": "^2.3.6"
   }
 }
