@@ -21,14 +21,16 @@ clean:
 $(LIBRARIES): |
 	npm run bower -- install $(notdir $@) --production
 
-$(LIBRARIES_TARGET_FOLDER):
-	npm run mkdirp -- $(dir $@)
+$(LIBRARIES_TARGET): | $(LIBRARIES_TARGET_FOLDER)
 
-$(LIBRARIES_TARGET): $(LIBRARIES) |$(LIBRARIES_TARGET_FOLDER)
+#$(LIBRARIES_TARGET_FOLDER):
+#	npm run mkdirp -- $(dir $@)
+
+$(LIBRARIES_TARGET): $(LIBRARIES)
 	npm run cp -- $(filter %$(@F),$^) $@
 
-$(TARGET):
+$(TARGET) $(LIBRARIES_TARGET_FOLDER):
 	npm run mkdirp -- $@
 
 $(CSS_TARGET): $(CSS_SRC)
-	npm run cp -- $(CSS_SRC) $@ 
+	npm run cp -- $(CSS_SRC) $@
