@@ -23,8 +23,6 @@ $(LIBRARIES): |
 
 $(LIBRARIES_TARGET): | $(LIBRARIES_TARGET_FOLDER)
 
-#$(LIBRARIES_TARGET_FOLDER):
-#	npm run mkdirp -- $(dir $@)
 
 $(LIBRARIES_TARGET): $(LIBRARIES)
 	npm run cp -- $(filter %$(@F),$^) $@
