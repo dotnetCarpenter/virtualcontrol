@@ -10,12 +10,12 @@ function delay(f, time, ...args) {
 function main() {
 	const canvas = SVG("canvas")
 
-	SVG.on(window, 'resize', () => { canvas.spof() })
+//	SVG.on(window, 'resize', () => { canvas.spof() })
 
 	let counter = 0
 	canvas.on("click", (event) => {
 		const tile = new Tile(canvas, [event.pageX, event.pageY])
-		tile.once("drawed", console.log.bind(null, `Hej Jon ${++counter}`))
+		//tile.once("drawed", console.log.bind(null, `Hej Jon ${++counter}`))
 		delay(tile.drawTile.bind(tile), 900)
 	})
 

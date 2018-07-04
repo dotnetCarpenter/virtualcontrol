@@ -2,11 +2,32 @@
 
 import SVG from "svg.js"
 
+function φ(a) {
+	return (1 + Math.sqrt(5))/2 * a
+}
+
+let ab = false
 
 class Tile {
 
 	constructor(canvas, [x, y] = [0,100]) {
-		const t = canvas.polygon("0,66 66,0 264,0 264,132 198,198 0,198")
+		const goldenPolygon = [
+			φ(0), φ(1)
+		, φ(1), φ(0)
+		,	φ(6), φ(0)
+		, φ(6), φ(3)
+		, φ(5), φ(4)
+		, φ(0), φ(4)
+		].map(x => x * 31)
+
+//canvas.polygon("0,66 66,0 264,0 264,132 198,198 0,198")
+		const t = ab ?
+			canvas.polygon("221.08 191.79 0.46 191.79 0.46 63.92 63.8 0.46 284.46 0.46 284.46 128.37")
+		:	canvas.polygon(goldenPolygon.join(" "))
+		if(ab) console.log("Anton")
+		else console.log("Jon")
+		ab = !ab
+
 		try {
 			this.tile = t.toPath(true)
 			this.tile.move(x, y-66)
